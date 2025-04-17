@@ -1,0 +1,163 @@
+/* Đảm bảo toàn bộ trang chiếm toàn bộ viewport và căn giữa nội dung */
+body,
+html {
+  margin: 0; /* Xóa khoảng trắng mặc định */
+  padding: 0;
+  width: 100%;
+  height: 100%; /* Chiều cao bằng toàn bộ màn hình */
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background-color: #ffffff; /* Màu nền trắng */
+}
+
+/* Container chính chứa phần đăng nhập */
+.login-container {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  width: 90vw;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  background-color: #ffffff;
+  /* padding: 5vw; */
+  box-sizing: border-box;}
+
+/* Hộp chứa form đăng nhập */
+.login-box {
+  width: 30vw; /* Chiều rộng chiếm 30% màn hình */
+  max-width: 500px; /* Giới hạn chiều rộng tối đa */
+  padding: 3vw; /* Padding tỷ lệ theo màn hình */
+  background-color: #d9d9d9; /* Màu nền xám */
+  border-radius: 10px; /* Bo tròn góc */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  height: 35vw;
+}
+
+/* Tiêu đề "Login" */
+.login-title {
+  font-size: clamp(
+    40px,
+    4vw,
+    100px
+  ); /* Kích thước chữ tự động thay đổi từ 40px đến 100px */
+  font-family: "Belanosima", sans-serif; /* Font chữ */
+  color: #000000; /* Màu chữ đen */
+  text-align: center; /* Căn giữa chữ */
+}
+
+/* Nhãn "Username" & "Password" */
+.input-label {
+  font-size: clamp(20px, 3vw, 30px); /* Kích thước chữ co dãn theo màn hình */
+  font-family: "Belanosima", sans-serif; /* Font chữ */
+  color: #000000; /* Màu chữ đen */
+  display: block; /* Hiển thị nhãn trên 1 dòng riêng */
+  margin-top: 2vh; /* Khoảng cách từ trên xuống */
+}
+
+/* Ô nhập liệu */
+.input-field {
+  max-width: 100%; /* Chiếm toàn bộ chiều rộng của login-box */
+  width: 100vh;
+  height: 4vh; /* Chiều cao theo tỷ lệ màn hình */
+  max-height: 50px; /* Giới hạn chiều cao tối đa */
+  background-color: #aba9a9; /* Màu nền xám nhạt */
+  border: none; /* Xóa viền */
+  padding: 1vh; /* Khoảng cách giữa nội dung và viền */
+  font-size: clamp(20px, 2vw, 30px); /* Kích thước chữ tự điều chỉnh */
+  margin-top: 0.5vh; /* Khoảng cách giữa các ô nhập liệu */
+  border-radius: 5px;
+}
+
+/* Nút Login - Căn giữa trong Login Box */
+.login-button {
+  width: 80%; /* Giảm chiều rộng để không quá to */
+  max-width: 250px; /* Giới hạn tối đa */
+  height: 6vh; /* Thu nhỏ chiều cao */
+  background-color: #000000; /* Màu nền đen */
+  color: #ffffff; /* Màu chữ trắng */
+  font-size: clamp(16px, 2.5vw, 22px); /* Giảm kích thước chữ */
+  font-family: "Belanosima", sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2.5vw; /* Giảm khoảng cách trên */
+  transition: all 0.3s ease; /* Hiệu ứng hover */
+
+  display: flex;
+  justify-content: center; /* Căn giữa chữ theo chiều ngang */
+  align-items: center; /* Căn giữa chữ theo chiều dọc */
+  text-align: center;
+
+  margin-left: auto; /* Đẩy nút ra giữa */
+  margin-right: auto;
+}
+
+/* Hiệu ứng hover cho nút login */
+.login-button:hover {
+  background-color: #333333; /* Màu xám khi hover */
+}
+
+/* Container chứa hai liên kết */
+/* Container chứa hai liên kết */
+.login-links {
+  display: flex;
+  justify-content: space-between; /* Căn trái và phải */
+  align-items: center;
+  width: 100%; /* Đảm bảo full chiều rộng của .login-box */
+  padding: 0 10px; /* Tạo khoảng trống hai bên */
+  margin-top: 2.5vw; /* Khoảng cách với phần trên */
+}
+
+/* Thiết lập kiểu chữ và màu */
+.link {
+  font-size: clamp(14px, 2vw, 18px);
+  font-family: "Belanosima", sans-serif;
+  color: #000000; /* Màu chữ đen */
+  text-decoration: none; /* Xóa gạch chân */
+  transition: color 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.link:hover {
+  color: #555555;
+  text-decoration: underline;
+}
+
+/* Logo */
+.container {
+  display: flex;
+  justify-content: flex-end; /* Đẩy logo sang bên phải */
+  align-items: center; /* Canh giữa theo chiều dọc */
+  height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+  padding-right: 10%; /* Giúp logo không sát mép phải */
+}
+
+.logo {
+  max-width: 40%; /* Để logo không quá lớn */
+  width: 40%;
+  height: auto;
+  transform: scale(0.3);
+}
+
+/* 📌 Responsive thiết kế theo từng loại màn hình */
+
+/* ✅ Màn hình dưới 1200px (Laptop nhỏ, máy tính bảng ngang) */
+@media (max-width: 1200px) {
+  .login-container {
+    flex-direction: column; /* Chuyển sang dạng dọc */
+    align-items: center; /* Căn giữa */
+    height: auto; /* Cho phép container mở rộng chiều cao */
+    padding: 5vw; /* Padding lớn hơn để không bị chật */
+  }
+
+  .login-box {
+    width: 90%; /* Chiếm 90% chiều rộng màn hình */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
+  }
+
+  .login-title {
+    font-size: 60px; /* Giảm kích thước tiêu đề */
+  }
+}

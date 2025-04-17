@@ -1,0 +1,254 @@
+body {
+  background-color: #ffffff;
+  font-family: "Belanosima", sans-serif;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+  height: 73px;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.logo-img {
+  width: 15vw; /* 10% của chiều rộng màn hình */
+  height: auto; /* Giữ tỷ lệ khung hình */
+}
+
+.title {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 65%;
+}
+
+.title h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.title p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.company-name {
+  font-size: 1.5vw;
+  flex-grow: 1;
+  min-width: 100px;
+  text-align: center;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  margin-top: 10px;
+  gap: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  width: 16%;
+  min-width: 160px;
+  background-color: #d9d9d9;
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.sidebar-btn {
+  width: 100%;
+  font-size: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #aba9a9;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-btn:hover {
+  background-color: #888888;
+}
+
+.sidebar-btn.active {
+  background-color: #6c6a6a;
+}
+
+.content {
+  flex: 1;
+  min-width: 260px;
+  padding: 20px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Tiêu đề không có hiệu ứng "clickable" */
+.submit {
+  font-size: 40px;
+  padding: 10px 20px;
+  border: none;
+  color: #000000;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: default; /* Không có hiệu ứng khi hover */
+}
+
+.checklist {
+  margin-top: 20px;
+  background-color: #a0a0a0;
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.checklist h2 {
+  font-size: 36px;
+}
+
+.checklist ul {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-left: 2vw;
+  cursor: pointer; /* Làm con trỏ thành clickable */
+  transition: background-color 0.2s ease, padding-left 0.3s ease;
+  white-space: normal; /* Đảm bảo văn bản có thể xuống dòng */
+  word-wrap: break-word; /* Cho phép dòng văn bản dài bị ngắt nếu cần thiết */
+  word-break: break-word; /* Giúp ngắt từ ở vị trí thích hợp */
+  max-width: 100%; /* Đảm bảo nội dung không bị tràn ra ngoài */
+}
+
+.checklist li:hover {
+  background-color: #c0c0c0;
+  padding-left: 10px; /* Thêm hiệu ứng di chuyển một chút sang trái khi hover */
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar {
+    width: 85%;
+  }
+  .content {
+    width: 85%;
+  }
+}
+
+input[type="checkbox"] {
+  transform: scale(2); /* Phóng to checkbox lên 1.5 lần */
+  margin-right: 2vw; /* Thêm khoảng cách bên phải nếu cần */
+}
+
+/* Đảm bảo hiệu ứng con trỏ "clickable" cho các nút */
+.sidebar-btn {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-btn:hover {
+  background-color: #bbbbbb;
+}
+
+.section-content {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  flex-grow: 1;
+  border: 5px solid #ddd;
+}
+
+.section-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.section-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-content li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f7f7;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.section-content li:hover {
+  background: #e0f0ff;
+}
+
+.section-content .checklist-item-text {
+  font-size: 1rem;
+  color: #444;
+  cursor: default;
+}
+
+.section-content input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.section-content button.sidebar-btn {
+  margin-top: 24px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-content button.sidebar-btn:hover {
+  background-color: #d9d9d9;
+}
